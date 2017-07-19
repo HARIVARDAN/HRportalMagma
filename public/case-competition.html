@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="js/jquery.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+   <script type="text/javascript" src="js/data.js"></script>
+   
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Case Competitions | JCR HR Solutions</title>
+
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+<div id="loading" class="center" style="margin-top: 15%;">
+<h2>JCR HR Solutions</h2>
+<h3>A Bridge between Talent and Oppurtunity</h3>
+<i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+</div>
+<div id="main-body" style="display: none;">
+
+   <header id="header">
+
+
+      <nav class="navbar navbar-inverse" role="banner">
+          <div class="container2">
+              <div class="navbar-header" style="margin-left: 3%;">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="logo" class="img-responsive">
+                    <!-- HR Solutions -->
+                  </a>
+              </div>
+
+              <div class="collapse navbar-collapse navbar-right" style="margin-right: 8%;">
+                  <ul class="nav navbar-nav">
+                      <li><a href="index.html">Home</a></li>
+                      <li ><a href="about-us.html">About Us</a></li>
+                      <li id="services" class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="services/recruitment.html">Recruitment Services</a></li>
+                              <li><a href="services/hrconsultancy.html">HR Consultancy</a></li>
+                              <li><a href="services/teachers-staffing.html">Teachers Staffing</a></li>
+                              <li><a href="services/marketing-services.html">Marketing Services</a></li>
+                              <li><a href="services/marketing-research.html">Marketing Research</a></li>
+                              <li><a href="services/case-study-competition.html">Case Study Competition</a></li>
+                          </ul>
+                      </li>
+
+                      <li id="industries" class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Industries <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="industries/it.html">IT,ITES</a></li>
+                              <li><a href="industries/bfs.html">BFSI</a></li>
+                              <li><a href="industries/fmcg.html">FMCG</a></li>
+                              <li><a href="industries/manufacturing.html">Manufacturing</a></li>
+                              <li><a href="industries/pharmaceutical.html">Pharmaceutical</a></li>
+                          </ul>
+                      </li>
+
+                      <li id="case-competition" class="dropdown active">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Case Competition <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="mba.html">MBA</a></li>
+                              <li><a href="it.html">IT</a></li>
+                              <li><a href="pharma.html">Pharmaceutical</a></li>
+                              <li><a href="results.html">Results</a></li>
+                          </ul>
+                      </li>
+
+                      
+                      <li><a href="contact-us.html">Contact Us</a></li>
+                    <li id="signup_li" style="display: none;" ><a href="signup.html">Sign Up</a></li>
+                    <li id="login_li" style="display: none;"><a href="login.html">Log In</a></li>
+                   <li id="user-details" style="display: none;"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <div class="row">
+                       <div class="col-sm-2 col-md-3" >
+                    <img id="user-image" src="images/user_image.jpg" style=" width:32px;height: 30px;" class="img-responsive">
+                         </div>
+                         <div class="col-sm-8 col-md-9" >
+
+                                     
+                         <span id="user-name" style="margin-right: 4px;margin-left: 0;" ></span><i class="fa fa-angle-down"></i>
+                           </div>
+                           </div>
+                         </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="profile.html">Profile</a></li>
+                              <li id="signout" ><a href="#">Sign Out</a></li>
+                             
+                          </ul>
+                      </li>
+                      <li id="employer" style="display: none;" class="active1"><a href="employer/login.html">Employer</a></li>
+                  </ul>
+              </div>
+          </div><!--/.container-->
+
+      </nav><!--/nav-->
+
+  </header><!--/header-->
+
+
+
+        <div class="container" style=" margin-top:0; " >
+          <div class="jumbotron">
+                <h2 style="text-align: center; font-size: 33px;padding-top: 0;padding-bottom: 6px;">Case Competition</h2>
+                <p style="font-size: 18px;line-height: 25px; color: #000;font-weight: 400;" >The concept of conducting case study competition is to know the ability of a participant in developing the best solution to a business or education-related case study within an allocated time frame, typically with teams of two or more individuals pitted against each other in a head-to-head or broader relative ranking.
+
+<br/><br/>Participants exercise skills and knowledge on a "real world" case for an actual organization, with the support of representatives who can provide professional advice. 
+<br/><br/> Select an issue based on its degree of importance, and employ the competition as a means to both highlight the issue and create potential solutions through the efforts of the competitors.
+<br/><br/>Teams in case competitions are tasked with assessing the situation facing the organization, analyzing available information, crafting a solution, and defending their recommendations. In general, teams adhere to a time limit and specific rules. Each team/participant is judged independently.
+<br/>Based upon the score in case competition th participants will be offered job interviews. 
+ <br/><br/><b>WHO CAN PARTICIPATE : </b><br/><span style="padding-top: 10px;">  Participating team can be internal to a business school, or they can involve team from different schools</span></p><br/>
+           
+</div>
+            <div class="row">
+                <div class="features">
+                  <div class="col-md-2"></div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 " >
+                        <div class="feature-wrap" >
+                            <!-- <i class="fa fa-bullhorn"></i> -->
+                            <a href="mba.html">
+                             <i class="fa fa-university"  aria-hidden="true"></i>
+                            <h2 style="padding-top: 10%;">MBA </h2>
+
+                          
+                      </a>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-6 col-sm-6 col-xs-12 " data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                          <a href="it.html">
+                           <i class="fa fa-globe" aria-hidden="true"></i>
+                              <h2 style="padding-top: 6%;">IT </h2>
+                           
+                    </a>
+                    </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 " data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                          <a href="pharma.html">
+                           <i class="fa fa-medkit"  aria-hidden="true"></i>
+                            <h2 style="padding-top: 10%;">Pharmaceutical</h2>
+
+                    </a>
+                      </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap" >
+                          <a href="results.html">
+                         <i class="fa fa-th-list"  aria-hidden="true"></i>
+                            <h2 style="padding-top: 10%;">Results</h2>
+
+                        
+                    </a>
+                    </div>
+                    </div><!--/.col-md-4-->
+
+
+
+
+                </div><!--/.services-->
+            </div><!--/.row-->
+
+
+
+
+
+        </div><!--/.container-->
+  
+</div><!--#main-body-->
+
+    <section id="bottom" style="margin-top:6%;display: none; ">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about-us.html">About us</a></li>
+
+                            <li><a href="terms-conditions">Terms and Service</a></li>
+                            <li><a href="privacy-policy.html">Privacy policy</a></li>
+                            <li><a href="contact-us.html">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Faq</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Forum</a></li>
+
+                        </ul>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Folllow Us</h3>
+                        <ul >
+                           <li><a href="https://www.facebook.com/Business-and-consulting-1931312137112914/33
+                          "><i class="fa fa-facebook"></i></a></li>
+
+                        <li><a href="https://www.linkedin.com/in/jcrgroup"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        </ul>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Get in touch</h3>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-phone"></i> &nbsp 9550722448</a></li>
+
+                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> hrconsultancy.jcrgroup@gmail.com</a></li>
+
+                    </div>
+                </div><!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" style="display: none;" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2017 <a target="_blank" href="#" title="JCR HR Solutions">JCR HR Solutions</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
+</html>

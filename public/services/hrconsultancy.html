@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Services-HR Consultancy | JCR HR Solutions</title>
+
+	<!-- core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/ico/favicon.ico">
+
+</head><!--/head-->
+
+<body class="homepage">
+
+   <header id="header">
+
+
+      <nav class="navbar navbar-inverse" role="banner">
+          <div class="container2">
+              <div class="navbar-header" style="margin-left: 3%;">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="../">
+                    <img src="../images/logo.png" alt="logo" class="img-responsive">
+                    <!-- HR Solutions -->
+                  </a>
+              </div>
+
+              <div class="collapse navbar-collapse navbar-right" style="margin-right: 8%;">
+                  <ul class="nav navbar-nav">
+                      <li ><a href="../">Home</a></li>
+                      <li ><a href="../about-us.html">About Us</a></li>
+                      <li id="services1" class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="recruitment.html">Recruitment Services</a></li>
+                                <li class="active"><a href="hrconsultancy.html">HR Consultancy</a></li>
+                                <li><a href="teachers-staffing.html">Teachers Staffing</a></li>
+                                <li><a href="marketing-services.html">Marketing Services</a></li>
+                                <li><a href="marketing-research.html">Marketing Research</a></li>
+                                <li><a href="case-study-competition.html">Case Study Competition</a></li>
+                            </ul>
+                        </li>
+
+                        <li id="industries1" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Industries <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../industries/it.html">IT,ITES</a></li>
+                                <li><a href="../industries/bfs.html">BFSI</a></li>
+                                <li><a href="../industries/fmcg.html">FMCG</a></li>
+                                <li><a href="../industries/manufacturing.html">Manufacturing</a></li>
+                                <li><a href="../industries/pharmaceutical.html">Pharmaceutical</a></li>
+                            </ul>
+                        </li>
+                     <li id="case-competition1" class="dropdown ">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Case Competition <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="../mba.html">MBA</a></li>
+                              <li><a href="../it.html">IT</a></li>
+                              <li><a href="../pharma.html">Pharmaceutical</a></li>
+                              <li><a href="../results.html">Results</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="../contact-us.html">Contact Us</a></li>
+                    <li id="signup_li" style="display: none;" ><a href="../signup.html">Sign Up</a></li>
+                    <li id="login_li" style="display: none;"><a href="../login.html">Log In</a></li>
+                   <li id="user-details" style="display: none;"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <div class="row">
+                       <div class="col-sm-2 col-md-3" >
+                    <img id="user-image" src="images/user_image.jpg" style=" width:32px;height: 30px;" class="img-responsive">
+                         </div>
+                         <div class="col-sm-8 col-md-9" >
+
+                                     
+                         <span id="user-name" style="margin-right: 4px;margin-left: 0;" ></span><i class="fa fa-angle-down"></i>
+                           </div>
+                           </div>
+                         </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="../profile.html">Profile</a></li>
+                              <li id="signout1" ><a href="#">Sign Out</a></li>
+                             
+                          </ul>
+                      </li>
+                      <li id="employer" style="display: none;" class="active1"><a href="../employer/login.html">Employer</a></li>
+                  </ul>
+              </div>
+          </div><!--/.container-->
+
+      </nav><!--/nav-->
+
+  </header><!--/header-->
+
+
+  <script src="../js/jquery.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+   <script type="text/javascript" src="../js/data.js"></script>
+
+<div class="row"  >
+  <div class="col-md-3 panel-group">
+    <div class="panel panel-primary" style="margin-left:6%; margin-top:3.75%;">
+      <div class="panel-heading">Services</div>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li  class="active"><a href="hrconsultancy.html">HR Consultancy<i class="fa fa-chevron-right" style="float:right;padding-top:1%;" ></i></a></li>
+      <li><a href="teachers-staffing.html">Teachers Staffing</a></li>
+      <li><a href="marketing-services.html">Marketing Services</a></li>
+      <li><a href="marketing-research.html">Marketing Research</a></li>
+      <li><a href="case-study-competition.html">Case Study Competition</a></li>
+    </ul>
+  </div>
+  </div>
+  <div class="col-md-6" style="margin:0;">
+    <section class="transparent-bg">
+        <div class="containers1" style="min-height:640px;">
+           <div class=" ">
+             <div class="row">
+               <div class="col-md-2 col-sm-4 col-xs-4"></div>
+               <div class="col-md-2 col-sm-4 col-xs-4 " style="padding-top:1.7%;">
+        <div class="icons" style="background-image: url(../images/services/hr_consultancy.png) ; " >
+                            </div>
+           </div>
+
+           <div class="col-md-5 col-sm-12 col-xs-12 " style="padding: 0% 2% 5% 4%;" >
+                <h2 class="services-heading">HR Consultancy Services</h2>
+              </div>
+            </div>
+                <p class="lead1" style="padding-left:6%;padding-right:6%;">We provide solutions that help our clients,candidates become more productive and profitable.
+We help Companies to develop their future leaders by helping them design and develop a true leadership culture .
+<ul class="lead1" style="padding-left:10%;padding-right:6%;">
+  <li>Providing clients with information.</li>
+  <li>Providing clients with techniques.</li>
+  <li>Providing clients with an objective point of view.</li>
+  <li>Providing clients with Problem Diagnosis and recommendation.</li>
+  <li>Providing clients with final report and follow up.</li>
+</ul>
+</p>
+            </div>
+
+          </div>
+        </section>
+  </div>
+  <div class="col-md-3 col-sm-12 col-xs-12" style="margin-top:0.75%;">
+    <div class="row">
+      <div class="col-sm-11 col-md-11 col-xs-11" id="side_applications_btn" style="display: none;">
+             <a href="../applications.html">
+                <div  class="media services-wrap" style="cursor: pointer;">
+                    <div class="pull-left" style="margin:5% 12% 1% 6%" >
+                        <span class="glyphicon glyphicon-th-list" style="font-size:44px; color:#000;"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Applications</h3>
+                        <p>See all your Applications</p>
+                    </div>
+                </div>
+            </a>
+              </div>
+
+        <div class="col-sm-11 col-md-11 col-xs-11">
+          <a href="../current_job.html" style="cursor:pointer; ">
+            <div class="media services-wrap ">
+                <div class="pull-left" style="margin-top:3%;margin-left:4%; ">
+                    <img class="img-responsive"  src="../images/current_jobs.png">
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">Current Jobs</h3>
+                    <p>Find latest Jobs Here</p>
+                </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="col-sm-11 col-md-11 col-xs-11">
+            
+              <div id="post_resume_btn" class="media services-wrap " style="cursor: pointer;">
+                  <div class="pull-left" style="margin-top:3%;margin-left:2%;">
+                      <img class="img-responsive" src="../images/post_resume.png">
+                  </div>
+                  <div class="media-body">
+                      <h3 class="media-heading">Post Resume</h3>
+                      <p>Get Right Offers for you</p>
+                  </div>
+              </div>
+           
+            </div>
+
+            <div class="col-sm-11 col-md-11 col-xs-11">
+             
+                <div id="post_recruitment_btn"  class="media services-wrap" style="cursor: pointer;">
+                    <div class="pull-left" style="margin:4% 4% 1% 1%" >
+                        <img class="img-responsive" src="../images/post_recruitment.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Post Recruitment</h3>
+                        <p>Let Candidates Find you</p>
+                    </div>
+                </div>
+            
+              </div>
+
+              <div class="col-sm-11 col-md-11 col-xs-11">
+                <a href="../create-resume.html" style="cursor:pointer; ">
+                  <div class="media services-wrap  ">
+                      <div class="pull-left" style="margin:3% 7% 4% 5%">
+                         <span class="glyphicon glyphicon-edit" style="font-size:50px; color:#000;"></span>
+                      </div>
+                      <div class="media-body">
+                          <h3 class="media-heading">Resume Assistance</h3>
+
+                      </div>
+                  </div>
+                </a>
+                </div>
+      </div><!--row-->
+  </div>
+</div><!--row -->
+
+<section id="bottom">
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="../about-us.html">About us</a></li>
+
+                        <li><a href="../terms-conditions.html">Terms and Service</a></li>
+                        <li><a href="../privacy-policy.html">Privacy policy</a></li>
+                        <li><a href="../contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Forum</a></li>
+
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Folllow Us</h3>
+                    <ul >
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Get in touch</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-phone"></i> &nbsp 9550722448</a></li>
+
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> hrconsultancy.jcrgroup@gmail.com</a></li>
+                        </ul>
+                </div>
+            </div><!--/.col-md-3-->
+        </div>
+    </div>
+</section><!--/#bottom-->
+
+<footer id="footer" class="midnight-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2017 <a target="_blank" href="#" title="JCR HR Solutions">JCR HR Solutions</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about-us.html">About Us</a></li>
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="../contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer><!--/#footer-->
+
+
+
+   <!-- Modal -->
+  <div class="modal fade" id="modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3  style="text-align: center;" class="modal-title">
+            JCR HR Solutions
+          </h3>
+        </div>
+        <div class="modal-body center">
+          <p  style="font-size: 17px;">Thanks for your Interest.<br/> Please <a href="../login.html">Login</a> to sumit your Resume</p>
+        </div>
+        <div class="modal-footer">
+        <a href="login.html">
+          <button type="button" class="btn btn-default" >Login</button>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+     <!-- Modal -->
+  <div class="modal fade" id="modal_post_recruitment" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3  style="text-align: center;" class="modal-title">
+            JCR HR Solutions
+          </h3>
+        </div>
+        <div class="modal-body center">
+          <p id="employer-modal-text" style="font-size: 17px;"></p>
+        </div>
+        <div class="modal-footer">
+        <a href="../employer/login.html">
+          <button type="button" class="btn btn-default" >Login</button>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+   <!-- Modal -->
+  <div class="modal fade" id="modal_alert" role="dialog" style="margin-top: 5%;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 id="modal-heading" class="modal-title">
+            Caution
+          </h3>
+        </div>
+        <div class="modal-body ">
+          <p  id="modal-text" style="font-size: 17px;"></p>
+  <button type="button" style="float: right;" class="btn btn-default" data-dismiss="modal">OK</button></br/>
+        </div>
+         
+       
+      </div>
+      
+    </div>
+  </div>
+
+
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.prettyPhoto.js"></script>
+<script src="../js/jquery.isotope.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

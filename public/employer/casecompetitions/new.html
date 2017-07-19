@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+   <script type="text/javascript" src="../js/database.js"></script>
+    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JCR HR Solutions-A bridge between Talent and Oppurtunity.">
+    <meta name="author" content="">
+    <title>Case Competiton- New| JCR HR Solutions</title>
+
+
+  <!-- core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/animate.min.css" rel="stylesheet">
+    <link href="../../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/responsive.css" rel="stylesheet">
+  
+  <script type="text/javascript" src="plugin/tinymce/tinymce.min.js"></script>
+
+  <script type="text/javascript" src="js/tinymce.js"></script>
+
+ <style type="text/css">
+   .mce-branding-powered-by{
+    display: none;
+   }
+ </style>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../../images/ico/favicon.ico">
+    
+</head><!--/head-->
+
+<body class="homepage">
+
+  <header id="header">
+
+
+      <nav class="navbar navbar-inverse" role="banner">
+          <div class="container2">
+              <div class="navbar-header" style="margin-left: 3%;">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="../">
+                    <img src="../../images/logo.png" alt="logo" class="img-responsive">
+                    <!-- HR Solutions -->
+                  </a>
+              </div>
+
+              <div class="collapse navbar-collapse navbar-right" style="margin-right: 8%;">
+                  
+                <ul class="nav navbar-nav">
+                     <li  ><a href="home.html">Home</a></li>
+                     <li> <a href="post-recruitment.html">New Recruitment</a></li>
+                     <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recruitments
+                           <i class="fa   fa-angle-down"></i></a>
+                           <ul class="dropdown-menu">
+                              <li><a href="postedRecruitments.html">Posted Recruitments</a></li>
+                              <li><a href="approvedRecruitments.html">Approved Recruitments</a></li>
+                              </ul>
+                     </li>
+                     
+                       <li class="active" ><a href="../casecompetitions.html">Case Competitions</a></li>
+
+                     <li> <a href="applications.html">Applications</a></li>
+                     <li id="signup_li" style="display: none;" ><a href="signup.html">Sign Up</a></li>
+                     <li id="login_li" class="active" style="display: none;"><a href="login.html">Log In</a></li>
+                     <li id="user-details" style="display: none;"> 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                         <div class="row">
+                            <div class="col-sm-2 col-md-3" >
+                               <img id="user-image" src="../images/user_image.jpg" style=" width:100%;height:100%;" 
+                                 class="img-responsive">
+                            </div>
+                           <div class="col-sm-8 col-md-9" >                                  
+                              <span id="user-name" style="margin-right: 4px;margin-left: 0;" ></span>
+                               <i class="fa fa-angle-down"></i>
+                           </div>
+                        </div>
+
+                       </a>
+
+                        <ul class="dropdown-menu">
+                      
+                              <li id="signout1" ><a href="#">Sign Out</a></li>
+                             
+                        </ul>
+                   </li>
+              </ul>
+           </div>
+        </div><!--/.container-->
+
+      </nav><!--/nav-->
+
+  </header><!--/header-->
+
+<div class="row " >
+  <div class="col-md-3 panel-group">
+   
+  </div>
+  <div class="col-md-6 col-sm-12 col-xs-12" >
+  
+
+        <section style="margin-top: 1.75%;">		
+     <div class="panel  panel-primary panel-green margin-bottom-40" style="min-height: 640px;"  >
+            <div class="panel-heading">
+              <h3 class="panel-title"> Create Competition</h3>
+            </div>
+            <div class="panel-body">
+               <!-- multistep form -->
+<h1  style="text-align: center;color: #000;">Competition Details</h1>
+<br/>
+<div  class="form form-horizontal"   >
+          <div class="row">
+             <div class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-10 col-xs-12">
+              
+          <div id="competition_time_details" style="">
+                <div class="form-group">
+                  <label for="competition_type" class="col-lg-4 control-label1">Competition On</label>
+                  <div class="col-lg-6">
+                     <select id="competition_type" class="form-control">
+                        <option value="IT">IT</option>
+                        <option value="MBA">MBA</option>
+                        <option value="Pharma">Pharma</option>
+                     </select>
+                  </div>
+                </div>
+               
+              <div class="form-group">
+                  <label for="competition_name" class="col-lg-4 control-label1">Competition Name</label>
+                  <div class="col-lg-6">
+                    <input type="text" required class="form-control" id="competition_name" required="true" name="competition_name" >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="startDate" class="col-lg-4 control-label1 ">Start Date</label>
+                  <div class="col-lg-6">
+                    <input type="date" class="form-control" id="startDate" name="startDate" >
+                  </div>
+                </div>
+                
+
+               <div class="form-group">
+                  <label for="startTime" class="col-lg-4 control-label1 " >Start Time</label>
+                  <div class="col-lg-6">
+                    <input type="time" class="form-control" id="startTime" name="startTime" >
+                   
+                  </div>
+                </div>
+
+               <div class="form-group">
+                  <label for="endDate" class="col-lg-4 control-label1 ">End Date</label>
+                  <div class="col-lg-6">
+                    <input type="date" class="form-control" id="endDate" name="endDate" >
+                  </div>
+                </div>
+ 
+             <div class="form-group">
+                  <label for="endTime" class="col-lg-4 control-label1 ">End Time</label>
+                  <div class="col-lg-6">
+                    <input type="time" class="form-control" id="endTime" name="endTime" >
+                   
+                  </div>
+                </div>
+               
+               
+                       
+                <div class="form-group">
+                  <div class="col-lg-offset-3 col-lg-9">
+                 
+                    <button id="next_btn" type="submit" style="background-color: rgb(197,45,47); color: #fff;" class="button btn btn-u ">
+                    Next</button>
+                  </div>
+                </div>
+             </div>
+ 
+
+
+      <div id="competition_details" style="display: none;">
+
+       
+      
+               <div class="form-group">
+                  <label for="competition_type" class="col-lg-12 control-label1">About Competition </label>
+                  <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                      
+                <textarea class="tinymce" id="texteditor">
+                  
+                </textarea>
+   
+  
+ 
+                  </div>
+                </div>
+               
+   
+            <div class="form-group">
+                  <label for="competition_type" class="col-lg-12 control-label1">Instructions and Rules</label>
+                  <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                      
+                <textarea class="tinymce" id="rules">
+                  
+                </textarea>
+   
+  
+ 
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="competition_type" class="col-lg-12 control-label1">Prizes </label>
+                  <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                      
+                <textarea class="tinymce" id="prizes">
+                  
+                </textarea>
+   
+  
+ 
+                  </div>
+                </div>
+
+                <div class="form-group ">
+                <label for="file" class="col-lg-3 control-label" >Upload Question File</label>
+                <div class="col-lg-4">
+               <input id="file"  name="file" class="form-control" type="file" />
+                       </div>
+    
+
+                    <span id="upload_msg" class="col-lg-4 alert alert-dismissable fade in ">
+  
+                  </span> 
+                </div>
+                       
+                <div class="form-group">
+                  <div class="col-lg-offset-3 col-lg-9">
+                 
+                    <button id="submit" type="submit" style="background-color: rgb(197,45,47); color: #fff;" class="button btn btn-u ">
+                    Create Competition</button>
+                  </div>
+                </div>
+             </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+</div>
+</section>
+</div>
+
+
+ <div class="col-md-3 col-sm-12 col-xs-12 panel-group">
+    
+  </div>
+
+
+
+
+</div>
+</div>
+<section id="bottom" style="display: none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about-us.html">About us</a></li>
+
+                        <li><a href="terms-coditions.html">Terms and Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy policy</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Forum</a></li>
+
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Folllow Us</h3>
+                    <ul >
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Get in touch</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-phone"></i> &nbsp 9550722448</a></li>
+
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> hrconsultancy.jcrgroup@gmail.com</a></li>
+
+                </div>
+            </div><!--/.col-md-3-->
+        </div>
+    </div>
+</section><!--/#bottom-->
+
+<footer id="footer" style="display: none;" class="midnight-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2017 <a target="_blank" href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates">JCR HR Solutions</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer><!--/#footer-->
+
+
+
+     <!-- Modal -->
+  <div class="modal fade" id="modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 id="modal-heading" style="text-align: center;" class="modal-title">
+            JCR HR Solutions
+          </h3>
+        </div>
+        <div class="modal-body center">
+          <p id="modal-text" style="font-size: 17px;">Thanks for your Interest.<br/> Please <a href="login.html">Login</a> to post your Competition</p>
+        </div>
+        <div class="modal-footer">
+        <a href="login.html">
+          <button type="button" class="btn btn-default" >Login</button>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    <script type="text/javascript" src="js/new.js"></script>
+
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/jquery.prettyPhoto.js"></script>
+    <script src="../../js/jquery.isotope.min.js"></script>
+    <script src="../../js/main.js"></script>
+   
+</body>
+</html>

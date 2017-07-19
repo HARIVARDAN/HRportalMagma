@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../js/jquery.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+   <script type="text/javascript" src="js/database.js"></script>
+   <script type="text/javascript" src="js/casecompetitions.js"></script>
+    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JCR HR Solutions-A bridge between Talent and Oppurtunity.">
+    <meta name="author" content="">
+    <title>Employer - Sign In | JCR HR Solutions</title>
+
+
+  <!-- core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/cards.css">
+ 
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/ico/favicon.ico">
+   
+</head><!--/head-->
+
+<body class="homepage" onload="caseCompetitions()" >
+
+  <header id="header">
+
+
+      <nav class="navbar navbar-inverse" role="banner">
+          <div class="container2">
+              <div class="navbar-header" style="margin-left: 3%;">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="../">
+                    <img src="../images/logo.png" alt="logo" class="img-responsive">
+                    <!-- HR Solutions -->
+                  </a>
+              </div>
+
+              <div class="collapse navbar-collapse navbar-right" style="margin-right: 8%;">
+                  
+                <ul class="nav navbar-nav">
+                     <li  ><a href="home.html">Home</a></li>
+                     <li> <a href="post-recruitment.html">New Recruitment</a></li>
+                     <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recruitments
+                           <i class="fa   fa-angle-down"></i></a>
+                           <ul class="dropdown-menu">
+                              <li><a href="postedRecruitments.html">Posted Recruitments</a></li>
+                              <li><a href="approvedRecruitments.html">Approved Recruitments</a></li>
+                              </ul>
+                     </li>
+                     
+                     <li class="active" ><a href="casecompetitions.html">Case Competitions</a></li> 
+
+                     <li> <a href="applications.html">Applications</a></li>
+                     <li id="signup_li" style="display: none;" ><a href="signup.html">Sign Up</a></li>
+                     <li id="login_li" class="active" style="display: none;"><a href="login.html">Log In</a></li>
+                     <li id="user-details" style="display: none;"> 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                         <div class="row">
+                            <div class="col-sm-2 col-md-3" >
+                               <img id="user-image" src="../images/user_image.jpg" style=" width:100%;height:100%;" 
+                                 class="img-responsive">
+                            </div>
+                           <div class="col-sm-8 col-md-9" >                                  
+                              <span id="user-name" style="margin-right: 4px;margin-left: 0;" ></span>
+                               <i class="fa fa-angle-down"></i>
+                           </div>
+                        </div>
+
+                       </a>
+
+                        <ul class="dropdown-menu">
+                             
+                              <li id="signout" ><a href="#">Sign Out</a></li>
+                             
+                        </ul>
+                   </li>
+              </ul>
+           </div>
+        </div><!--/.container-->
+
+      </nav><!--/nav-->
+
+  </header><!--/header-->
+
+
+<div class="container" id="main_container" style="background-color: #f1f1f1">
+
+     <!--small cards-->
+        <div class="row">
+            <div class=" col-md-4">
+            <div class="card">
+                    <div class="card-content">
+                      <div class="card-header-orange">
+                           <h1 class="card-heading" > Add New Competition</h1>
+                        </div>
+                        <a href="casecompetitions/new.html" style="cursor: pointer;">
+                        <div class="card-body">
+                        <p class="card-p" style="font-size: 14.3px;">
+                         <span style="visibility: hidden;">kjjjjkkj</span>
+                        &nbsp  Create your New Competition here.
+                          <span style="visibility: hidden;">kjjjjjjnkljj</span>
+                        </p>
+                        <h2  style="font-size: 48px; padding: 6% 10% 6% 9% ;" class="center">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </h2>
+                      </div>
+                      </a>
+                          <div class="card-header" style="padding:  2% 20% 2% 20%">
+                                <a href="casecompetitions/new.html">Create a New Competition</a>
+                                </div>
+                                
+                                   
+                    </div>
+                </div>
+            </div>
+
+
+          <div class=" col-md-4">
+            <div class="card">
+                    <div class="card-content">
+                      <div class="card-header-orange">
+                           <h1 class="card-heading" > Created Competitions</h1>
+                        </div>
+                        <a href="#" style="cursor: pointer;">
+                        <div id="createdCompetitons_btn" class="card-body">
+                        <p class="card-p" style="font-size: 14.3px;">
+                        Find all the Created Competitions here.
+                         <span style="visibility: hidden;">kjjjsdhfnkldlllk</span>
+                        </p>
+                        <h2 id="createdCompetitonsCount" style="font-size: 40px; padding: 3% 10% 5% 9% ;" class="center">
+                           0
+                        </h2>
+                      </div>
+                      </a>
+
+                        <div class="card-header" style="padding:  2% 20% 2% 20%">
+                           <a href="#">Find your Created Competitions</a>
+                       </div>
+                                
+                                   
+                    </div>
+                </div>
+            </div>   
+
+        <div class="col-md-4">
+          <div class="card">
+                    <div class="card-content">
+                      <div class="card-header-blue">
+                           <h1 class="card-heading">Approved Competitions</h1>
+                        </div>
+                        <a href="#" style="cursor: pointer;">
+                        <div id="approvedCompetitons_btn" class="card-body">
+                        <p class="card-p" style="font-size: 14.3px;">
+
+                      &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp Find all the Approved Competitions here.
+                                 <span style="visibility: hidden;">kjjjjlllk</span>
+                            </p>
+                            <h2 id="approvedCompetitionsCount" style="font-size: 40px; padding: 3% 10% 5% 9% ;" class="center">
+                            0
+                        </h2>
+                      </div>
+                      </a>
+                      <div class="card-header" style="padding:  2% 10% 2% 20%">
+                                <a href="casecompetitions/new.html">See all the approved Competitions </a>
+                                </div>
+                        
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+                    <div class="card-content">
+                      <div class="card-header-grey">
+                           <h1 class="card-heading">Ongoing Competitions</h1>
+                        </div>
+                        <a href="#" style="cursor: pointer;">
+                        <div id="ongoingCompetitons_btn" class="card-body">
+                        <p style="font-size: 15px; padding-left:5%;">
+                           &nbsp&nbsp&nbsp&nbsp    Find all the ongoing Competitions here.
+                           <span style="visibility: hidden;">kuhgjk</span>
+                                
+                            </p>
+                            <h2 id="ongoingCompetitionsCount" style="font-size: 40px; padding: 0% 10% 5% 9% ;" class="center">
+                            0
+                        </h2>
+                      </div>
+                      </a>
+                     <div class="card-header" style="padding:  2% 20% 2% 20%">
+                                <a href="#">See all the Ongoing Competitions</a>
+                                </div>
+                        
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+                    <div class="card-content">
+                      <div class="card-header-grey">
+                           <h1 class="card-heading">Completed Competitions</h1>
+                        </div>
+                        <a href="#" style="cursor: pointer;">
+                        <div id="completedCompetitons_btn" class="card-body">
+                        <p style="font-size: 15px; padding-left:5%;">
+                           &nbsp&nbsp&nbsp&nbsp    Find all the Completed Competitions here.
+                           <span style="visibility: hidden;">kuhgjk</span>
+                                
+                            </p>
+                            <h2 id="completedCompetitionsCount" style="font-size: 40px; padding: 0% 10% 5% 9% ;" class="center">
+                            0
+                        </h2>
+                      </div>
+                      </a>
+                     <div class="card-header" style="padding:  2% 10% 2% 10%">
+                            <a href="#">See all the Completed Competitions</a>
+                                </div>
+                        
+                    </div>
+                </div>
+        </div>
+    
+   <!--  <div class="col-md-4">
+          <div class="card">
+                    <div class="card-content">
+                      <div class="card-header-grey">
+                           <h1 class="card-heading">Resulted Competitions</h1>
+                        </div>
+                        <a href="applications.html" style="cursor: pointer;">
+                        <div class="card-body">
+                        <p style="font-size: 15px; padding-left:5%;">
+                           &nbsp&nbsp&nbsp&nbsp    Find all the Resulted Competitions here.
+                           <span style="visibility: hidden;">kuhgjk</span>
+                                
+                            </p>
+                            <h2 id="resultedCompetitionsCount" style="font-size: 40px; padding: 0% 10% 5% 9% ;" class="center">
+                            0
+                        </h2>
+                      </div>
+                      </a>
+                     <div class="card-header" style="padding:  2% 20% 2% 20%">
+                                <a href="applications.html">See all the On going Competitions</a>
+                                </div>
+                        
+                    </div>
+                </div>
+        </div> -->
+
+        </div>
+					
+</div>
+
+
+
+  <div id="sidebar" class="col-md-3  panel-group" style="display: none;" >
+    <div class="panel panel-primary" style="margin-left:6%; margin-top:19%;">
+      <div class="panel-heading">Case Competitions</div>
+    <ul class="nav nav-pills nav-stacked">
+      <li id="" ><a href="casecompetitions/new.html">Add Competition</a></li>
+      <li id="created_tab" ><a href="#">Created Competitions</a></li>
+      <li id="approved_tab"><a href="#">Approved Competitions</a></li>
+      <li id="ongoing_tab"><a href="#">Ongoing Competitions</a></li>
+      <li id="completed_tab"><a href="#">Completed Competitions</a></li>
+
+    </ul>
+  </div>
+  </div>
+ 
+
+
+<div class="container" id="createdcompetitions_container" style="background-color: #f1f1f1; display: none;">
+
+    <h2 style="text-align: center;">Created Competitions</h2><br/>
+
+  <div id="createdloading" class="center" style="margin-top: 5%;">
+     <h2>Fetching the Data..</h2>
+       <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+    
+   </div>
+
+  <div id="creatednoData_div" class="center" style="margin-top: 5%;display: none;">
+   
+      <h2>No Created Competitions available</h2>
+
+  </div>
+
+  <div id="created_table_div" style="overflow-x: auto; display: none;">
+
+ <table class="table" style="background-color: #fff;" id="createdcompetitions_table">
+ 
+  <thead class="thead-default">
+    <tr>
+      <th>S.No</th>
+      <th>Competition Name</th>
+      <th>Category</th>
+      <th>Posted On</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>View Details</th>
+      </tr>
+  </thead>
+  <tbody id="createdCompetitions_tbody">
+    
+  </tbody>
+</table>
+</div>
+          
+</div>
+
+
+<div class="container" id="approvedcompetitions_container" 
+     style="background-color: #f1f1f1; display: none;">
+
+     <h2 style="text-align: center;">Approved Competitions</h2><br/>
+
+     <div id="approvedloading" class="center" style="margin-top: 5%;">
+         <h2>Fetching the Data..</h2>
+         <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+     </div>
+
+     <div id="approvednoData_div" class="center" style="margin-top: 5%;display: none;">
+   
+          <h2>No approved Competitions available</h2>
+
+     </div>
+
+     <div id="approved_table_div" style="overflow-x: auto; display: none;">
+
+     <table class="table" style="background-color: #fff;" id="approvedcompetitions_table">
+ 
+          <thead class="thead-default">
+          <tr>
+              <th>S.No</th>
+              <th>Competition Name</th>
+              <th>Category</th>
+              <th>Posted On</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>View Details</th>
+              <th>Registrations</th>
+          </tr>
+          </thead>
+          <tbody id="approvedCompetitions_tbody">
+    
+          </tbody>
+       </table>
+   
+       </div>
+          
+</div>
+
+
+<div class="container" id="ongoingcompetitions_container" 
+     style="background-color: #f1f1f1; display: none;">
+
+     <h2 style="text-align: center;">Ongoing Competitions</h2><br/>
+
+     <div id="ongoingloading" class="center" style="margin-top: 5%;">
+         <h2>Fetching the Data..</h2>
+         <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+     </div>
+
+     <div id="ongoingnoData_div" class="center" style="margin-top: 5%;display: none;">
+   
+          <h2>No Competitions are going on</h2>
+
+     </div>
+
+     <div id="ongoing_table_div" style="overflow-x: auto; display: none;">
+
+     <table class="table" style="background-color: #fff;" id="ongoingcompetitions_table">
+ 
+          <thead class="thead-default">
+          <tr>
+              <th>S.No</th>
+              <th>Competition Name</th>
+              <th>Category</th>
+              <th>Posted On</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>View Details</th>
+              <th>Registrations</th>
+              <th>Submissions</th>
+          </tr>
+          </thead>
+          <tbody id="ongoingCompetitions_tbody">
+    
+          </tbody>
+       </table>
+   
+       </div>
+          
+</div>
+
+
+<div class=" container" id="completedcompetitions_container" 
+     style="background-color: #f1f1f1; display: none;">
+
+     <h2 style="text-align: center;">Completed Competitions</h2><br/>
+
+     <div id="completedloading" class="center" style="margin-top: 5%;">
+         <h2>Fetching the Data..</h2>
+         <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+     </div>
+
+     <div id="completednoData_div" class="center" style="margin-top: 5%;display: none;">
+   
+          <h2>No Competitions are Completed</h2>
+
+     </div>
+
+     <div id="completed_table_div" style="overflow-x: auto; display: none;">
+
+     <table class="table" style="background-color: #fff;" id="completedcompetitions_table">
+ 
+          <thead class="thead-default">
+          <tr>
+              <th>S.No</th>
+              <th>Competition Name</th>
+              <th>Category</th>
+              <th>Posted On</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>View Details</th>
+              <th>Registrations</th>
+              <th>Submissions</th>
+          </tr>
+          </thead>
+          <tbody id="completedCompetitions_tbody">
+    
+          </tbody>
+       </table>
+   
+       </div>
+          
+</div>
+
+
+<div class="container" id="registrations_container" 
+     style="background-color: #f1f1f1; display: none;">
+
+     <h2 id="registrations_competition_name" style="text-align: center;">Registrations</h2><br/><br/>
+
+     <div id="registrationsloading" class="center" style="margin-top: 5%;">
+         <h2>Fetching the Data..</h2>
+         <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+     </div>
+
+     <div id="registrationsnoData_div" class="center" style="margin-top: 5%;display: none;">
+   
+          <h2>Yet registrations are not Started</h2>
+
+     </div>
+
+     <div id="registrations_table_div" style="overflow-x: auto; display: none;">
+
+     <table class="table" style="background-color: #fff;" id="registrations_table">
+ 
+          <thead class="thead-default">
+          <tr>
+              <th>S.No</th>
+              <th>Name</th>
+              <th>Registered On</th>
+              <th>View Details</th>
+          </tr>
+          </thead>
+          <tbody id="registrations_tbody">
+    
+          </tbody>
+       </table>
+   
+       </div>
+          
+</div>
+
+
+<div class="container" id="submissions_container" 
+     style="background-color: #f1f1f1; display: none;">
+
+     <h2 id="submissions_competition_name" style="text-align: center;">Submissions</h2><br/><br/>
+
+     <div id="submissionsloading" class="center" style="margin-top: 5%;">
+         <h2>Fetching the Data..</h2>
+         <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+     </div>
+
+     <div id="submissionsnoData_div" class="center" style="margin-top: 5%;display: none;">
+   
+          <h2>Yet Submissions are not Started</h2>
+
+     </div>
+
+     <div id="submissions_table_div" style="overflow-x: auto; display: none;">
+
+     <table class="table" style="background-color: #fff;" id="submissions_table">
+ 
+          <thead class="thead-default">
+          <tr>
+              <th>S.No</th>
+              <th>Name</th>
+              <th>Submitted On</th>
+              <th>View Details</th>
+              <th>View Solution</th>
+             
+          </tr>
+          </thead>
+          <tbody id="submissions_tbody">
+    
+          </tbody>
+       </table>
+   
+       </div>
+          
+</div>
+
+  <section id="bottom" style="margin-top:18%; ">
+          <div class="container ">
+              <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                      <div class="widget">
+                          <h3>Company</h3>
+                          <ul>
+                              <li><a href="about-us.html">About us</a></li>
+
+                              <li><a href="terms-conditions.html">Terms and Service</a></li>
+                              <li><a href="privacy-policy.html">Privacy policy</a></li>
+                              <li><a href="contact-us.html">Contact us</a></li>
+                          </ul>
+                      </div>
+                  </div><!--/.col-md-3-->
+
+                  <div class="col-md-3 col-sm-6">
+                      <div class="widget">
+                          <h3>Support</h3>
+                          <ul>
+                              <li><a href="#">Faq</a></li>
+                              <li><a href="#">Blog</a></li>
+                              <li><a href="#">Forum</a></li>
+
+                          </ul>
+                      </div>
+                  </div><!--/.col-md-3-->
+
+                  <div class="col-md-3 col-sm-6">
+                      <div class="widget">
+                          <h3>Folllow Us</h3>
+                          <ul >
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+
+                          <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                          </li>
+                          </ul>
+                      </div>
+                  </div><!--/.col-md-3-->
+
+                  <div class="col-md-3 col-sm-6">
+                      <div class="widget">
+                          <h3>Get in touch</h3>
+                          <ul>
+                              <li><a href="#"><i class="fa fa-phone"></i> &nbsp 9550722448</a></li>
+
+                              <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> hrconsultancy.jcrgroup@gmail.com</a></li>
+                        </ul>
+                      </div>
+                  </div><!--/.col-md-3-->
+              </div>
+          </div>
+      </section><!--/#bottom-->
+
+      <footer id="footer"  class="midnight-blue">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-6">
+                      &copy; 2017 <a target="_blank" href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates">JCR HR Solutions</a>. All Rights Reserved.
+                  </div>
+                  <div class="col-sm-6">
+                      <ul class="pull-right">
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">About Us</a></li>
+                          <li><a href="#">Faq</a></li>
+                          <li><a href="#">Contact Us</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </footer><!--/#footer-->
+   <!-- Modal -->
+  <div class="modal fade" id="modal_alert" role="dialog" style="margin-top: 5%;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 id="modal-heading" class="modal-title">
+            Caution
+          </h3>
+        </div>
+        <div class="modal-body ">
+          <p  id="modal-text" style="font-size: 17px;"></p>
+  <button type="button" style="float: right;" class="btn btn-default" data-dismiss="modal">OK</button></br/>
+        </div>
+         
+       
+      </div>
+      
+    </div>
+  </div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="modal_process" role="dialog" style="margin-top: 6%;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        
+        <div class="modal-body ">
+          <p  id="" style="font-size: 18px;">Signing inthe Account</p>
+  
+        </div>
+         
+       
+      </div>
+      
+    </div>
+  </div>
+                 
+
+         
+         
+          <script src="../js/bootstrap.min.js"></script>
+          <script src="../js/jquery.prettyPhoto.js"></script>
+          <script src="../js/jquery.isotope.min.js"></script>
+         
+        
+      </body>
+      </html>

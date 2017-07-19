@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+   <script type="text/javascript" src="../js/database.js"></script>
+    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JCR HR Solutions-A bridge between Talent and Oppurtunity.">
+    <meta name="author" content="">
+    <title>Post Reccruitment- employer | JCR HR Solutions</title>
+
+
+  <!-- core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/animate.min.css" rel="stylesheet">
+    <link href="../../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/responsive.css" rel="stylesheet">
+    
+ 
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../../images/ico/favicon.ico">
+   
+</head><!--/head-->
+
+<body onload="setEditData();" class="homepage">
+
+  <header id="header">
+
+
+      <nav class="navbar navbar-inverse" role="banner">
+          <div class="container2">
+              <div class="navbar-header" style="margin-left: 3%;">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="../">
+                    <img src="../../images/logo.png" alt="logo" class="img-responsive">
+                    <!-- HR Solutions -->
+                  </a>
+              </div>
+
+              <div class="collapse navbar-collapse navbar-right" style="margin-right: 8%;">
+                  
+                <ul class="nav navbar-nav">
+                      <li ><a href="../home.html">Home</a></li>
+                     <li  ><a href="../post-recruitment.html">New Recruitment</a></li>
+                     
+                      <li class="active"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recruitments<i class="fa fa-angle-down"></i></a>
+                           <ul class="dropdown-menu">
+                              <li class="active"><a href="../postedRecruitments.html">Posted Recruitments</a></li>
+                              <li><a href="../approvedRecruitments.html">Approved Recruitments</a></li>
+                              </ul>
+                        </li>      
+                      <li  ><a href="../casecompetitions.html">Applications</a></li>
+                     <li ><a href="applications.html">Applications</a></li>
+                    <li id="signup_li" style="display: none;" ><a href="signup.html">Sign Up</a></li>
+                    <li id="login_li" class="active" style="display: none;"><a href="login.html">Log In</a></li>
+                   <li id="user-details" style="display: none;"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <div class="row">
+                       <div class="col-sm-2 col-md-3" >
+                  <img id="user-image" src="../../images/user_image.jpg" style=" width:100%;height:100%;" class="img-responsive">
+                         </div>
+                         <div class="col-sm-8 col-md-9" >
+
+                                     
+                         <span id="user-name" style="margin-right: 4px;margin-left: 0;" ></span><i class="fa fa-angle-down"></i>
+                           </div>
+                           </div>
+                         </a>
+                          <ul class="dropdown-menu">
+                            
+                              <li id="signout1" ><a href="#">Sign Out</a></li>
+                             
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+          </div><!--/.container-->
+
+      </nav><!--/nav-->
+
+  </header><!--/header-->
+  <div class="container">
+<div class="row">
+  
+
+  <div class="col-md-12 " style="margin-top: 0.5% ">
+
+    <div class="panel  panel-primary panel-green margin-bottom-40">
+            <div class="panel-heading">
+              <h3 class="panel-title"> Post Recruitment</h3>
+            </div>
+            <div class="panel-body">
+
+
+      <div class="form-horizontal" role="form">
+
+         <div class="row">
+           
+           <div class="col-md-6 col-sm-6 col-xs-12">
+
+                <div class="form-group">
+                  <label for="job_title" class="col-lg-4 control-label2 ">Job Title</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" id="job_title" maxlength="50" >
+                  </div>
+                </div>
+               
+                 <div class="form-group">
+                  <label for="industry_type" class="col-lg-4 control-label1">Job Industry</label>
+                  <div class="col-lg-8">
+                    <select id="industry_type" style="padding-top: 0.7%;" class="form-control" >
+                       <option value=""></option>
+                      <option value="Agriculture">Agriculture</option>
+                      <option value="8">IT- Software</option>
+                      <option value="9">IT-Hardware </option>
+                      <option value="<1">Mining</option>
+                      <option value="2">Manufacturing </option>
+                      <option value="3">Wholesale </option>
+                       <option value="4">Retail</option>
+                      <option value="5">Travel and Transporting </option>
+                      <option value="6">FMCG</option>
+                      <option value="7">Education </option>
+                     <option value="10">Real estate</option>
+                      <option value="11">Entertainment/Media/Publishing </option>
+                      <option value="12">Telecom </option>
+                      <option value="13">Healthcare/Diagnostics</option>
+                      <option value="other" >Other</option>
+                   </select>
+                  </div>
+                </div>
+                
+
+                 <div class="form-group">
+                  <label for="job_description" class="col-lg-4 control-label2 ">Job Description</label>
+                  <div class="col-lg-8">
+                   <textarea rows="3" class="form-control" id="job_description" maxlength="300" style="overflow-y: scroll;"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="vacancies" class="col-lg-4 control-label2 ">No. of Vacancies</label>
+                  <div class="col-lg-8">
+                    <input type="number" class="form-control" id="vacancies" >
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="job_location" class="col-lg-4 control-label2 ">Job Location</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" id="job_location" maxlength="60" >
+                  </div>
+                </div>
+                 
+
+                 <div class="form-group">
+                  <label for="salary" class="col-lg-4 control-label2 ">Salary</label>
+                  <div class="col-lg-8">
+                     <select id="salary" class="form-control">
+                      <option value="Below 10,000">Below 10,000</option>
+                      <option value="10,000 to 20,000">10,000 to 20,000</option>
+                      <option value="20,000 to 40,000">20,000 to 40,000</option>
+                      <option value="40,000 to 60,000">40,000 to 60,000</option>
+                      <option value="60,000 to 1,00,000">60,000 to 1,00,000</option>
+                      <option value=">1,00,000">1,00,000 +</option>
+                   </select>
+                  </div>
+                </div>
+                
+                
+                 
+
+            </div>
+
+
+            <div class="col-md- col-sm-6 col-xs-12">
+   
+                <div class="form-group">
+                  <label for="work_experience" class="col-lg-4 control-label2 ">Work Experience</label>
+                  <div class="col-lg-2">
+                     <select id="exp_year" class="form-control" style="margin-right: 0;" >
+                     
+                      <option value="0">0</option>
+                      <option value="1">1 </option>
+                      <option value="2">2 </option>
+                      <option value="3">3 </option>
+                       <option value="4">4 </option>
+                      <option value="5">2 </option>
+                      <option value="6">6</option>
+                      <option value="7">7 </option>
+                      <option value="8">8</option>
+                      <option value="9">9 </option>
+                      <option value="10">10</option>
+                      <option value="11">11 </option>
+                      <option value="12">12 </option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value=">15">> 15</option>
+                      Years
+                   </select>
+                 </div>
+                 <div class="col-lg-2" style="margin-top: 0.75%;">
+                  Years                 </div>
+                    <div class="col-lg-2">
+                   <select id="exp_month" class="form-control" style="margin:0;" >
+                     
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2 </option>
+                      <option value="3">3 </option>
+                       <option value="4">4 </option>
+                      <option value="5">2 </option>
+                      <option value="6">6</option>
+                      <option value="7">7 </option>
+                      <option value="8">8</option>
+                      <option value="9">9 </option>
+                      <option value="10">10</option>
+                      <option value="11">11 </option>
+                      <option value="12">12 </option>
+
+                      
+                   </select>
+                      
+                       </div>
+                       <div class="col-lg-2" style="margin-top: 0.75%;">
+                  Months
+                 </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="education" class="col-lg-4 control-label2 ">Education</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" id="education" maxlength="20" >
+                  </div>
+                </div>
+
+               
+
+
+                 <div class="form-group">
+                  <label for="skills" class="col-lg-4 control-label2 ">Skills Needed</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" id="skills" maxlength="30" >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="skills" class="col-lg-4 control-label2 ">Last date</label>
+                  <div class="col-lg-8">
+                    <input type="date" class="form-control" id="last_date" >
+                  </div>
+                </div>
+                 
+                <div class="form-group">
+                  <label for="job_title" class="col-lg-4 control-label2 ">About Company</label>
+                  <div class="col-lg-8">
+                     <textarea rows="3" class="form-control" id="about_company" maxlength="300" style="overflow-y: scroll;"></textarea>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="website" class="col-lg-4 control-label2 ">Website</label>
+                  <div class="col-lg-8">
+                     <input type="url" class="form-control" id="website" maxlength="40" >
+                  </div>
+                </div>
+                
+                 
+                </div>
+
+                </div><!--row-->
+   
+       <div class="row">
+        
+           <h2 style="text-align: center;" >Contact Details</h2><br/>
+           <div class="col-md-6 col-sm-6 col-xs-12">
+                   
+                <div class="form-group">
+                  <label for="job_title" class="col-lg-4 control-label2 ">Contact Person</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" id="contact_person" maxlength="60" >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="col-lg-4 control-label2 ">Email</label>
+                  <div class="col-lg-8">
+                    <input type="email" class="form-control" id="email" maxlength="60" >
+                  </div>
+                </div>
+             </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12">
+
+              <div class="form-group">
+                  <label for="job_title" class="col-lg-4 control-label2 ">Phone</label>
+                  <div class="col-lg-8">
+                    <input type="tel" class="form-control" id="phone" maxlength="60" >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="job_title" class="col-lg-4 control-label2 ">Mobile</label>
+                  <div class="col-lg-8">
+                    <input type="tel" class="form-control" id="mobile" maxlength="60" >
+                  </div>
+                </div>
+           </div>
+           </div>
+
+
+
+
+                <div class="center">
+                <br/>
+               <button type="submit" id="save_posted_recruitment_btn" class="butoon btn btn-u" style="background-color: rgb(197,45,47); color: #fff;"> 
+                     </span>
+                    &nbsp Save Changes</button>
+
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+    </div>
+
+      <section id="bottom"  style="margin-top:10%; ">
+          <div class="container ">
+              <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                      <div class="widget">
+                          <h3>Company</h3>
+                          <ul>
+                              <li><a href="about-us.html">About us</a></li>
+
+                              <li><a href="terms-conditions.html">Terms and Service</a></li>
+                              <li><a href="privacy-policy.html">Privacy policy</a></li>
+                              <li><a href="contact-us.html">Contact us</a></li>
+                          </ul>
+                      </div>
+                  </div><!--/.col-md-3-->
+
+                  <div class="col-md-3 col-sm-6">
+                      <div class="widget">
+                          <h3>Support</h3>
+                          <ul>
+                              <li><a href="#">Faq</a></li>
+                              <li><a href="#">Blog</a></li>
+                              <li><a href="#">Forum</a></li>
+
+                          </ul>
+                      </div>
+                  </div><!--/.col-md-3-->
+
+                  <div class="col-md-3 col-sm-6">
+                      <div class="widget">
+                          <h3>Folllow Us</h3>
+                          <ul >
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+
+                          <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                          </li>
+                          </ul>
+                      </div>
+                  </div><!--/.col-md-3-->
+
+                  <div class="col-md-3 col-sm-6">
+                      <div class="widget">
+                          <h3>Get in touch</h3>
+                          <ul>
+                              <li><a href="#"><i class="fa fa-phone"></i> &nbsp 9550722448</a></li>
+
+                              <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> hrconsultancy.jcrgroup@gmail.com</a></li>
+
+                      </div>
+                  </div><!--/.col-md-3-->
+              </div>
+          </div>
+      </section><!--/#bottom-->
+
+      <footer id="footer" class="midnight-blue">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-6">
+                      &copy; 2017 <a target="_blank" href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates">JCR HR Solutions</a>. All Rights Reserved.
+                  </div>
+                  <div class="col-sm-6">
+                      <ul class="pull-right">
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">About Us</a></li>
+                          <li><a href="#">Faq</a></li>
+                          <li><a href="#">Contact Us</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </footer><!--/#footer-->
+
+
+         <!-- Modal -->
+  <div class="modal fade" id="modal_alert" role="dialog" style="margin-top: 5%;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 id="modal-heading" class="modal-title">
+            Caution
+          </h3>
+        </div>
+        <div class="modal-body ">
+          <p  id="modal-text" style="font-size: 17px;"></p>
+  <button type="button" style="float: right;" class="btn btn-default" data-dismiss="modal">OK</button></br/>
+        </div>
+         
+       
+      </div>
+      
+    </div>
+  </div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="modal_process" role="dialog" style="margin-top: 6%;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        
+        <div class="modal-body ">
+          <p  id="" style="font-size: 18px;">Submitting the Recruitment..<i class="fa fa-spinner"></i></p>
+  
+        </div>
+         
+       
+      </div>
+      
+    </div>
+  </div>
+
+         <script type="text/javascript" src="../js/edit.js"></script>
+          <script src="../../js/bootstrap.min.js"></script>
+         
+          <script src="../../js/jquery.isotope.min.js"></script>
+          <script src="../../js/main.js"></script>
+         
+      </body>
+      </html>

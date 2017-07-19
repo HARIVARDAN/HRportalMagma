@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+    <!-- Bootstrap 3.3.6 -->
+
+    <script type="text/javascript" src="../js/admin/bootstrap.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+   
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+    <script type="text/javascript" src="admin.js"></script>
+   <script type="text/javascript" src="remove.js"></script>
+<style>
+.loader {
+  margin-left: 45%;
+  margin-top: 15%;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body onload="RemoveRecruiters()">
+<h1 style="text-align: center;"> JCR HR Solutions</h1>
+<h2 style="text-align: center;">Removing ...Please Don't close the page </h2>
+
+
+<div align="center" class="loader"></div>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+   <script type="text/javascript" src="../../js/data.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Case Study Competition | JCR HR Solutions</title>
+
+	<!-- core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../../css/animate.min.css" rel="stylesheet">
+	<link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/responsive.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../css/post_competition.css">
+    <script type="text/javascript" src="../../js/post_competition.js"></script>
+    
+
+
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../../images/ico/favicon.ico">
+   
+
+
+</head><!--/head-->
+
+<body>
+<div id="loading" class="center" style="margin-top: 15%;">
+<h2>JCR HR Solutions</h2>
+<h3>A Bridge between Talent and Oppurtunity</h3>
+<i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+</div>
+<div id="main-body" style="display: none;">
+
+  <header id="header">
+
+
+      <nav class="navbar navbar-inverse" role="banner">
+          <div class="container2">
+              <div class="navbar-header" style="margin-left: 3%;">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html">
+                    <img src="../../images/logo.png" alt="logo" class="img-responsive">
+                    <!-- HR Solutions -->
+                  </a>
+              </div>
+
+              <div class="collapse navbar-collapse navbar-right" style="margin-right: 8%;">
+                  <ul class="nav navbar-nav">
+                      <li ><a href="index.html">Home</a></li>
+                      <li ><a href="about-us.html">About Us</a></li>
+                      <li id="services" class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="services/recruitment.html">Recruitment Services</a></li>
+                              <li><a href="services/hrconsultancy.html">HR Consultancy</a></li>
+                              <li><a href="services/teachers-staffing.html">Teachers Staffing</a></li>
+                              <li><a href="services/marketing-services.html">Marketing Services</a></li>
+                              <li><a href="services/marketing-research.html">Marketing Research</a></li>
+                              <li><a href="services/case-study-competition.html">Case Study Competition</a></li>
+                          </ul>
+                      </li>
+
+                      <li id="industries" class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Industries <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="industries/it.html">IT,ITES</a></li>
+                              <li><a href="industries/bfs.html">BFSI</a></li>
+                              <li><a href="industries/fmcg.html">FMCG</a></li>
+                              <li><a href="industries/manufacturing.html">Manufacturing</a></li>
+                              <li><a href="industries/pharmaceutical.html">Pharmaceutical</a></li> 
+                          </ul>
+                      </li>
+                         <li id="case-competition" class="dropdown active">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Case Competition <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                              <li class="active"><a href="mba.html">MBA</a></li>
+                              <li><a href="it.html">IT</a></li>
+                              <li><a href="pharma.html">Pharmaceutical</a></li>
+                              <li><a href="results.html">Results</a></li>
+                          </ul>
+                      </li>
+
+                      <li><a href="contact-us.html">Contact Us</a></li>
+                    <li id="signup_li" style="display: none;" ><a href="signup.html">Sign Up</a></li>
+                    <li id="login_li" style="display: none;"><a href="login.html">Log In</a></li>
+                   <li id="user-details" style="display: none;"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <div class="row">
+                       <div class="col-sm-2 col-md-3" >
+                    <img id="user-image" src="../../images/user_image.jpg" style=" width:32px;height: 30px;" class="img-responsive">
+                         </div>
+                         <div class="col-sm-8 col-md-9" >
+
+                                     
+                         <span id="user-name" style="margin-right: 4px;margin-left: 0;" ></span><i class="fa fa-angle-down"></i>
+                           </div>
+                           </div>
+                         </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="profile.html">Profile</a></li>
+                              <li id="signout" ><a href="#">Sign Out</a></li>
+                             
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+          </div><!--/.container-->
+
+      </nav><!--/nav-->
+
+  </header><!--/header-->
+ 
+
+<div class="row " >
+  <div class="col-md-3 panel-group">
+    <div class="panel panel-primary" style="margin-left:6%; margin-top:3.75%;">
+      <div class="panel-heading">Case Competition</div>
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active" ><a href="mba.html">MBA<i class="fa fa-chevron-right" style="float:right;padding-top:1%;" ></i></a></li>
+      <li ><a href="it.html">IT</a></li>
+      <li><a href="pharma.html">Pharmaceutical</a></li>
+      <li><a href="results.html">Results</a></li>
+
+    </ul>
+  </div>
+  </div>
+  <div class="col-md-6 col-sm-12 col-xs-12" >
+    
+        <section style="margin-top: 1.75%;">		
+     <div class="panel  panel-primary panel-green margin-bottom-40" style="min-height: 640px;"  >
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-institution " aria-hidden="true"></i>    MBA - Create Competition</h3>
+            </div>
+            <div class="panel-body">
+               <!-- multistep form -->
+<h1 style="text-align: center;color: #000;">Competition Details</h1>
+<br/>
+<div  class="form form-horizontal"   >
+             <div class="row">
+             <div class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-10 col-xs-12">
+                <div class="form-group">
+                  <label for="competition_name" class="col-lg-4 control-label1">Competition Name</label>
+                  <div class="col-lg-6">
+                    <input type="text" required class="form-control" id="competition_name" required="true" name="competition_name" >
+                  </div>
+                </div>
+               
+                <div class="form-group">
+                  <label for="startDate" class="col-lg-4 control-label1 ">Start Date</label>
+                  <div class="col-lg-6">
+                    <input type="date" class="form-control" id="startDate" name="startDate" >
+                  </div>
+                </div>
+                
+
+               <div class="form-group">
+                  <label for="startTime" class="col-lg-4 control-label1 " >Start Time</label>
+                  <div class="col-lg-6">
+                    <input type="time" class="form-control" id="startTime" name="startTime" >
+                   
+                  </div>
+                </div>
+
+               <div class="form-group">
+                  <label for="endDate" class="col-lg-4 control-label1 ">End Date</label>
+                  <div class="col-lg-6">
+                    <input type="date" class="form-control" id="endDate" name="endDate" >
+                  </div>
+                </div>
+ 
+             <div class="form-group">
+                  <label for="endTime" class="col-lg-4 control-label1 ">End Time</label>
+                  <div class="col-lg-6">
+                    <input type="time" class="form-control" id="endTime" name="endTime" >
+                   
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="oraganisation_type"  class="col-lg-4 control-label1 ">Organisation Type</label>
+                  <div class="col-lg-6">
+                    <select class="form-control" style="padding-top: 1px;" id="organisation_type" name="organisation_type" >
+                    <option value="College">College</option>
+                    <option value="Company">Company</option>
+                    <option value="Other">Other</option>
+                   </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="organisation_name" class="col-lg-4 control-label1">Oraganisation Name</label>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control" id="organisation_name" name="organisation_name" >
+                  </div>
+                </div>
+                       
+                       <div class="form-group">
+                  <div class="col-lg-offset-3 col-lg-9">
+                 
+                    <button id="create_competition_mba_btn" type="submit" style="background-color: rgb(197,45,47); color: #fff;" class="button btn btn-u ">
+                    Create Competition</button>
+                  </div>
+                </div>
+
+                     </div>
+              </div>
+            </div>
+          </div>
+
+</div>
+</section>
+</div>
+
+
+ <div class="col-md-3 col-sm-12 col-xs-12 panel-group">
+    <div class="panel panel-primary" style="margin-top:3.75%;margin-right: 14%;">
+      <div class="panel-heading">Manage Competitions</div>
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active" id="add_new_competition_btn">
+      <a href="#"><i class="fa fa-chevron-left" style="float:left;padding-top:2.5%; padding-right: 2.5%;" ></i>Add New Competition</a>
+      </li>
+      <li ><a href="it.html">Your competitions Listing</a></li>
+     </ul>
+  </div>
+  
+  <div class="panel panel-primary" style=" margin-top:3.75%;margin-right: 14%;">
+      <div class="panel-heading">Your Registrations</div>
+    <ul class="nav nav-pills nav-stacked">
+      <li ><a href="mba.html">Competitions</a></li>
+      <li ><a href="it.html">Quizes</a></li>
+     </ul>
+  </div>
+  </div>
+
+
+
+
+</div>
+</div>
+<section id="bottom" style="display: none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about-us.html">About us</a></li>
+
+                        <li><a href="terms-coditions.html">Terms and Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy policy</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Forum</a></li>
+
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Folllow Us</h3>
+                    <ul >
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Get in touch</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-phone"></i> &nbsp 9550722448</a></li>
+
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> hrconsultancy.jcrgroup@gmail.com</a></li>
+
+                </div>
+            </div><!--/.col-md-3-->
+        </div>
+    </div>
+</section><!--/#bottom-->
+
+<footer id="footer" style="display: none;" class="midnight-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2017 <a target="_blank" href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates">JCR HR Solutions</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer><!--/#footer-->
+
+
+
+     <!-- Modal -->
+  <div class="modal fade" id="modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 id="modal-heading" style="text-align: center;" class="modal-title">
+            JCR HR Solutions
+          </h3>
+        </div>
+        <div class="modal-body center">
+          <p id="modal-text" style="font-size: 17px;">Thanks for your Interest.<br/> Please <a href="login.html">Login</a> to post your Competition</p>
+        </div>
+        <div class="modal-footer">
+        <a href="login.html">
+          <button type="button" class="btn btn-default" >Login</button>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+    <script type="text/javascript" src="../../js/mba.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/jquery.prettyPhoto.js"></script>
+    <script src="../../js/jquery.isotope.min.js"></script>
+    <script src="../../js/main.js"></script>
+   
+</body>
+</html>
